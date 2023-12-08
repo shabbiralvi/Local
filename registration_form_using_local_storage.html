@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-- Optional theme --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> <!-- Latest compiled and minified JavaScript --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<title></title>
+</head>
+<body>
+<div class="container my-0">
+	<div class="text-danger" style="width:100% margin:0px"><p>Note:regsitration will close on <strong>11:59pm 30-09-2023 </strong></p></div>
+<h3 class="text-center">Registration Form</h3>
+	<label class="label">Full Name:</label>
+	<input class="form-control"type	="text"/>
+	
+	<label class="label">Gmail</label>
+	<input class="form-control"type	="text"/>
+	<label class="label">Class</label>
+	<input class="form-control"type	="text"/>
+	<label class="label">Group</label>
+	<input class="form-control form-sm"type	="text"/>
+	<label class="label">major</label>
+	
+	<input class="form-control"type	="text"/>
+	<label class="label">marks</label>
+	<input class="form-control"type	="text"/>
+	<label class="label">grade/cgpa</label>
+	<input class="form-control"type	="text"/>
+	
+
+<button onclick="Show()"class="btn btn-primary form-control">register</button><br>
+
+</p>
+
+</div>	
+
+
+<div>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>s no</th>
+				<th>Full Name</th>
+				<th>Gmail</th>
+				<th>Class </th>
+				<th>Group</th>
+				<th>Major</th>
+				<th>Marks</th>
+				<th>grade</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>01</td>
+				<td>shabbir</td>
+				<td>abc@gmail.com</td>
+				<td>graudate </td>
+				<td>science</td>
+				<td>Computer</td>
+				<td>1500</td>
+				<td>A</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+
+<script type="text/javascript">
+
+
+</script>
+
+
+<style type="text/css">
+	
+.container{
+
+
+width: 30%;
+height: auto;
+box-shadow: 0px 0px 1px 2px gray;border-radius: 10px;
+}
+.title{
+
+font-size: 20px;font-weight: bold;
+animation-name: anim;
+ animation-delay: 1s;
+  animation-duration: 1s;
+  border-radius: 5px;
+  background-color: white
+  ;animation-iteration-count: infinite;
+  border-radius: 5px;
+  border:none;
+
+}
+.form-control{
+	height: 	30px;margin:0px;padding: 	0px;
+}
+label{
+	height: 	30px;padding: 	0px;margin-bottom:10px;
+}
+/*button{
+	align-items: center;align-self: center;
+}
+*/@keyframes anim{
+	0%{
+		box-shadow: 0px 0px 0px 0px gray;
+
+	}
+	
+		100%{
+				
+				box-shadow: 0px 0px 8px 8px gray;
+	}
+
+}
+.btn{
+margin-top: 10px;margin-bottom: 	10px;
+		box-shadow: 0px 0px 1px 2px gray;
+	}
+</style>
+</html>
+
+
+<script type="text/javascript">
+	function Show(){
+
+var input=document.querySelectorAll("input");
+
+
+if(localStorage.getItem("local")==null)
+{
+	var array=[];
+	array.push(
+
+[
+		{"Name":input[0].value},
+		{"Mail":input[1].value},
+		{"Class":input[2].value},
+		{"Group":input[3].value},
+		{"7Major":input[4].value},
+		{"marks":input[5].value},
+		{"grade/CGPA":input[6].value},
+		{"DoB":input[7].value}
+	]	
+);
+	localStorage.setItem("local",JSON.stringify(array));
+
+}
+else
+{
+	var local_str=localStorage.getItem("local");
+
+	var json_array=JSON.parse(local_str);
+
+	json_array.push(
+
+
+		{"Name":input[0].value},
+		{"Mail":input[1].value},
+		{"Class":input[2].value},
+		{"Group":input[3].value},
+		{"7Major":input[4].value},
+		{"marks":input[5].value},
+		{"grade/CGPA":input[6].value},
+		{"DoB":input[7].value}
+		
+);
+	localStorage.setItem("local",JSON.stringify(json_array));
+
+}
+
+
+}
+
+</script>
